@@ -2,10 +2,11 @@
 
 (function($) {
 
-    console.log('this is the prototype.js file');
-
-    console.log('query', $);
-
-    console.log('body', $('body'));
+    $.ajax({
+        url: "/assets/postcodes-by-ward.json"
+    }).done(function(body) {
+        console.log('done')
+        console.log('body', body)
+    })
 
 })(jQuery)
