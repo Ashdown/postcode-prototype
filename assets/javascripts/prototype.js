@@ -10,8 +10,20 @@
         })
     }
 
+    function getAddressByPostcode(callback) {
+        $.ajax({
+            url: "/assets/address-by-postcode.json"
+        }).done(function(body) {
+            callback(body);
+        })
+    }
+
     function standardisePostcode(postcode) {
         return postcode.replace(" ", "").toUpperCase();
+    }
+
+    function convertToHyphens(str) {
+        return str.replace(/\s+/g, '-').toLowerCase();
     }
 
 
@@ -19,10 +31,15 @@
 
         event.preventDefault();
 
+        $('.ward-information').addClass('hidden');
+        $('.address-information').addClass('hidden');
+        $('.ward-panel').addClass('hidden');
+
         var myPostcode = standardisePostcode($('.postcode-form .postcode-input').val());
 
         getPostcodeData(function(postcodes){
             var ward = false;
+            var address = false;
 
             $.each(postcodes, function(key, postcodesForWard) {
                 $.each(postcodesForWard, function(index, postcode) {
@@ -32,7 +49,22 @@
                 });
             });
 
-            console.log('ward', ward);
+            if(ward) {
+
+                $('.ward-information .ward-name').text(ward);
+                $('.ward-information').removeClass('hidden');
+                $('.' + convertToHyphens(ward) + '-panel').removeClass('hidden');
+
+                getAddressByPostcode(function(addressByPostcode) {
+
+                    address = addressByPostcode[myPostcode] ? addressByPostcode[myPostcode] : false;
+                    $('.address-information .address-first-line').text(address);
+                    $('.address-information .address-postcode-line').text(myPostcode);
+                    $('.address-information').removeClass('hidden');
+                })
+            }
+
+
         });
 
     });
