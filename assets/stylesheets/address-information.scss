@@ -1,0 +1,16 @@
+@import 'variables';
+
+.address-information {
+
+  margin: 0 10px;
+  text-align: left;
+
+  .address-header {
+    color: $byline-text;
+    font: bold 14px/23px 'Droid Sans', sans-serif;
+    letter-spacing: 0;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+}
