@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 
 .ward-content {
   background: $white;
@@ -8,4 +9,13 @@
   margin: 10px 10px 0 10px;
   padding: 30px 10px;
   position: relative;
+}
+
+@include respond-to(desktop) {
+  .ward-content {
+    margin-right: 5px;
+    margin-left: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
 }

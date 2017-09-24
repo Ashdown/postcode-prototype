@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 
 .ward-finder-box {
   background-color: $white;
@@ -22,4 +23,10 @@
     border-radius: 3px;
   }
 
+}
+
+@include respond-to(tablet) {
+  .ward-finder-box {
+    width: 320px;
+  }
 }
