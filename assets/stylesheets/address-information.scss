@@ -5,6 +5,14 @@
 
   margin: 0 10px;
   text-align: left;
+  max-height: 0;
+  overflow: hidden;
+  @include transition(max-height, 0.2s, linear);
+
+  &.open {
+    max-height: 100px;
+  }
+
 
   .address-header {
     color: $byline-text;

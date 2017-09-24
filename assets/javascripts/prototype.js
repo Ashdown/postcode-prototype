@@ -32,8 +32,9 @@
         event.preventDefault();
 
         $('.ward-information').addClass('hidden');
-        $('.address-information').addClass('hidden');
+        $('.address-information').removeClass('open');
         $('.ward-panel').addClass('hidden');
+        $('.ward-content').removeClass('visible');
 
         var myPostcode = standardisePostcode($('.postcode-form .postcode-input').val());
 
@@ -54,13 +55,16 @@
                 $('.ward-information .ward-name').text(ward);
                 $('.ward-information').removeClass('hidden');
                 $('.' + convertToHyphens(ward) + '-panel').removeClass('hidden');
+                if($('.' + convertToHyphens(ward) + '-panel').length) {
+                    $('.ward-content').addClass('visible');
+                }
 
                 getAddressByPostcode(function(addressByPostcode) {
 
                     address = addressByPostcode[myPostcode] ? addressByPostcode[myPostcode] : false;
                     $('.address-information .address-first-line').text(address);
                     $('.address-information .address-postcode-line').text(myPostcode);
-                    $('.address-information').removeClass('hidden');
+                    $('.address-information').addClass('open');
                 })
             }
 

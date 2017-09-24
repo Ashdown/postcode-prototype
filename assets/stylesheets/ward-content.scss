@@ -9,6 +9,11 @@
   margin: 10px 10px 0 10px;
   padding: 30px 10px;
   position: relative;
+  opacity: 0;
+  @include transition(opacity, 0.2s, linear);
+  &.visible {
+    opacity: 1;
+  }
 }
 
 @include respond-to(desktop) {
