@@ -32,4 +32,12 @@
     text-shadow: $white 0 1px;
   }
 
+  .secondary-header {
+    color: $header-black;
+    display: block;
+    font: 23px/28px 'labourface-bold';
+    margin: 15px 0 12px 0;
+    text-shadow: none;
+  }
+
 }
