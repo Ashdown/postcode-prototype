@@ -8,3 +8,24 @@
 .droid-text {
   font-family: 'Droid Sans', Helvetica, Arial, sans-serif;
 }
+
+.page {
+  background-color: $paper-white;
+  font: 15px/21px "Droid Serif",Helvetica,Arial,sans-serif;
+  color: $regular-grey;
+  overflow: hidden;
+
+  .header-container {
+    width: 96%;
+    margin: 0 2%;
+  }
+
+  .page-header {
+    color: $header-black;
+    font-size: 13px;
+    font-family: 'labourface-bold', Helvetica, Arial, sans-serif;
+    margin: 5px 0;
+    text-shadow: $white 0 1px;
+  }
+
+}

@@ -1,0 +1,33 @@
+@import 'variables';
+
+.ward-finder-box {
+  background-color: $white;
+  border: solid 3px #dcdcdc;
+  border-radius: 4px;
+  margin: 5px 5px 0 5px;
+  padding: 0;
+  text-align: center;
+
+  .secondary-header {
+    color: $header-black;
+    display: block;
+    font: 23px/28px 'labourface-bold';
+    margin: 15px 0 12px 0;
+    text-shadow: none;
+  }
+
+  .detect-button-form {
+    padding-top: 10px;
+  }
+
+  .text-input {
+    box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
+    border: 0 none;
+    display: inline-block;
+    float: none;
+    margin: 0 4px 10px 0;
+    padding: 13px 10px;
+    border-radius: 3px;
+  }
+
+}
