@@ -3,6 +3,7 @@
 (function($) {
 
     function getPostcodeData(callback) {
+
         $.ajax({
             url: "/assets/postcodes-by-ward.json"
         }).done(function(body) {
@@ -59,13 +60,13 @@
                     $('.ward-content').addClass('visible');
                 }
 
-                getAddressByPostcode(function(addressByPostcode) {
-
-                    address = addressByPostcode[myPostcode] ? addressByPostcode[myPostcode] : false;
-                    $('.address-information .address-first-line').text(address);
-                    $('.address-information .address-postcode-line').text(myPostcode);
-                    $('.address-information').addClass('open');
-                })
+//                getAddressByPostcode(function(addressByPostcode) {
+//
+//                    address = addressByPostcode[myPostcode] ? addressByPostcode[myPostcode] : false;
+//                    $('.address-information .address-first-line').text(address);
+//                    $('.address-information .address-postcode-line').text(myPostcode);
+//                    $('.address-information').addClass('open');
+//                })
             }
 
 
